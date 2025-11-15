@@ -11,11 +11,16 @@ Actions:
         rm <roleId> - Remove a role from user
 `.trim();
 
-export async function func(action: string, userId: string, additionalArg?: string) {
+export async function func(action: string, userId: string, userIdIfRoleAction?: string) {
     if (!userId) {
-        console.error("Usage: gatewarden user <action> <userId> [additionalArg]");
+        console.error("Usage: gatewarden user <action> <userId>");
         console.error(help);
         process.exit(1);
+    }
+
+    if (action === "role") {
+        action = "role " + userId;
+        userId = userIdIfRoleAction;
     }
 
     try {
@@ -34,7 +39,7 @@ export async function func(action: string, userId: string, additionalArg?: strin
             case "create":
                 let userData: any;
                 try {
-                    userData = JSON.parse(additionalArg || "{}");
+                    userData = JSON.parse(userIdIfRoleAction || "{}");
                     userData._id = userId; // Ensure the ID matches the parameter
                 } catch (error) {
                     console.error("Invalid JSON for user data");
@@ -47,22 +52,22 @@ export async function func(action: string, userId: string, additionalArg?: strin
                 break;
 
             case "role add":
-                if (!additionalArg) {
+                if (!userIdIfRoleAction) {
                     console.error("For role add action, provide roleId");
                     process.exit(1);
                 }
-                await userMgr.addRoleToUser(userId, additionalArg);
-                clog(`Role ${additionalArg} added to user ${userId}`);
+                await userMgr.addRoleToUser(userId, userIdIfRoleAction);
+                clog(`Role ${userIdIfRoleAction} added to user ${userId}`);
                 cdump(true);
                 break;
 
             case "role rm":
-                if (!additionalArg) {
+                if (!userIdIfRoleAction) {
                     console.error("For role rm action, provide roleId");
                     process.exit(1);
                 }
-                await userMgr.removeRoleFromUser(userId, additionalArg);
-                clog(`Role ${additionalArg} removed from user ${userId}`);
+                await userMgr.removeRoleFromUser(userId, userIdIfRoleAction);
+                clog(`Role ${userIdIfRoleAction} removed from user ${userId}`);
                 cdump(true);
                 break;
 
