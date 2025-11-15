@@ -3,12 +3,11 @@ import { clog, cdump } from "../dump";
 
 export const help = `
 Manage users
-Actions:
-    get <userId> - Get user by ID
-    create <userId> <userData> - Create a new user - { roles?: Id[]; attrib?: A }
-    role:
-        add <roleId> - Add a role to user
-        rm <roleId> - Remove a role from user
+get <userId> - Get user by ID
+create <userId> <userData> - Create a new user - { roles?: Id[]; attrib?: A }
+role:
+  add <roleId> - Add a role to user
+  rm <roleId> - Remove a role from user
 `.trim();
 
 export async function func(action: string, userId: string, userIdIfRoleAction?: string) {
