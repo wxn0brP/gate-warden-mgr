@@ -1,0 +1,22 @@
+{
+  "name": "@wxn0brp/gate-warden-mgr",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "description": "",
+  "author": "wxn0brP",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "gatewarden": "./src/index.ts",
+    "gatewarden-node": "./dist/node.js"
+  },
+  "devDependencies": {
+    "@types/bun": "*",
+    "tsc-alias": "^1",
+    "typescript": "^6"
+  },
+  "dependencies": {
+    "@wxn0brp/db": "^0.110.0",
+    "@wxn0brp/gate-warden": "^0.6.2"
+  }
+}
