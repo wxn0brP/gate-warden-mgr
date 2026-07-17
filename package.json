@@ -20,7 +20,7 @@
         "typescript": "^6"
     },
     "dependencies": {
-        "@wxn0brp/db": "^0.110.0",
+        "@wxn0brp/db": "^0.112.0",
         "@wxn0brp/gate-warden": "^0.6.2"
     }
 }
