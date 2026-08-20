@@ -3,9 +3,9 @@ import { args } from "./config";
 
 const name = args.shift();
 if (!name || name === "help") {
-    const { func: helpFunc } = await import("./modules/help.js");
-    await helpFunc(...(name === "help" ? args : []));
-    process.exit(0);
+	const { func: helpFunc } = await import("./modules/help.js");
+	await helpFunc(...(name === "help" ? args : []));
+	process.exit(0);
 }
 
 const { func } = await import(`./modules/${name}.js`);

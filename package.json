@@ -16,11 +16,12 @@
     },
     "devDependencies": {
         "@types/bun": "*",
+        "@wxn0brp/biome": "*",
         "tsc-alias": "^1",
-        "typescript": "^6"
+        "typescript": "^7"
     },
     "dependencies": {
-        "@wxn0brp/db": "^0.110.0",
-        "@wxn0brp/gate-warden": "^0.6.2"
+        "@wxn0brp/db": "^0.120.0",
+        "@wxn0brp/gate-warden": "^0.7.0"
     }
 }
