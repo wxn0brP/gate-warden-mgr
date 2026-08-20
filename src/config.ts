@@ -13,6 +13,11 @@ const { values, positionals } = parseArgs({
 			default: false,
 			short: "D",
 		},
+		version: {
+			type: "boolean",
+			default: false,
+			short: "v",
+		},
 	},
 	allowPositionals: true,
 });
@@ -26,3 +31,4 @@ positionals.shift(); // remove "node/bun"
 positionals.shift(); // remove "index.ts"
 
 export const args = positionals;
+export const printVersion = values.version;
