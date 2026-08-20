@@ -1,6 +1,6 @@
 {
     "name": "@wxn0brp/gate-warden-mgr",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "main": "src/index.ts",
     "description": "",
     "author": "wxn0brP",
