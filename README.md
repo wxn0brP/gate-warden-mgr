@@ -10,6 +10,12 @@ A command-line tool for managing access control systems. Provides modules for us
 ingr gate-warden-mgr
 ```
 
+or 
+
+```bash
+bunx @wxn0brp/ing i gate-warden-mgr
+```
+
 ## Usage
 
 ```bash
@@ -17,3 +23,7 @@ gatewarden <module> [args]
 ```
 
 Run `gatewarden` for detailed module information.
+
+## License
+
+MIT
